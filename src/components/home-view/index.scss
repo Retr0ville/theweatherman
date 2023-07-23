@@ -1,0 +1,200 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.home-weather-page {
+  width: 90%;
+  margin: auto;
+  padding: 1.25rem 0rem;
+  margin-top: 1rem;
+
+  @media (min-width: $md-breakpoint) {
+    width: 60%;
+  }
+}
+
+.home-weather-wrapper {
+  .at-a-glance {
+    @include flexContainer();
+    padding-top: 1.875rem;
+    color: $color-white;
+
+    h2 {
+      font-weight: weight(bold);
+    }
+
+    p {
+      font-weight: weight(light);
+      font-family: $font-family-text;
+    }
+  }
+}
+
+.user-weather-wrapper {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    -45deg,
+    hsla(14, 82%, 65%, 0.856),
+    rgba(2, 0, 36, 0.449),
+    rgba(52, 52, 153, 0.779),
+    #c1266187,
+    hsl(34, 82%, 63%) // rgba(0, 212, 255, 1) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  padding: 1rem 0.55rem;
+  border-radius: 0.625rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+
+  @media (min-width: $sm-breakpoint) {
+    padding: 1.25rem 0.9375rem;
+  }
+
+  .user-weather {
+    @include flexContainer();
+    width: 95%;
+    margin: auto;
+    box-sizing: border-box;
+
+    .mid-section {
+      color: $color-white;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.625rem;
+      text-align: right;
+
+      span {
+        font-weight: bold;
+      }
+
+      @media (min-width: $sm-breakpoint) {
+        font-size: 0.75rem;
+      }
+
+      .temp {
+        @include temperatureText();
+        font-size: 2rem;
+        padding: 0.3125rem;
+
+        @media (min-width: $sm-breakpoint) {
+          font-size: 4rem;
+        }
+      }
+
+      .condition {
+        font-size: 1rem;
+      }
+
+      .condition,
+      .cloud {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    img {
+      height: 4.375rem;
+      width: 100%;
+      object-fit: contain;
+    }
+    .right-section {
+      display: flex;
+      flex-direction: column;
+
+      .location-name,
+      .location-time {
+        text-align: right;
+        color: $color-white;
+        padding: 0.125rem;
+        font-weight: weight(bold);
+        margin-bottom: 0.75rem;
+      }
+
+      .location-feel {
+        color: $color-white;
+        font-size: 0.625rem;
+        padding: 0.125rem;
+        text-align: right;
+
+        span {
+          font-weight: weight(bold);
+        }
+      }
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.home-weather-details {
+  padding-top: 1.25rem;
+  margin-top: 1.625rem;
+
+  .header {
+    font-family: $font-family-text;
+    color: $color-white;
+    font-weight: weight(bold);
+    font-size: larger;
+
+    @media (min-width: $sm-breakpoint) {
+      font-size: 1.5rem;
+    }
+  }
+  .weather-list {
+    padding: 1.25rem 0rem;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: $sm-breakpoint) {
+  .user-weather-wrapper {
+    .user-weather {
+      height: 145px;
+
+      .right-section {
+        .location-name,
+        .location-time {
+          text-align: right;
+          color: $color-white;
+          padding: 0.125rem;
+          font-weight: weight(bold);
+          font-size: 2.25rem;
+        }
+
+        .location-feel {
+          color: $color-white;
+          font-size: 0.875rem;
+          padding: 0.125rem;
+
+          span {
+            font-weight: weight(bold);
+          }
+        }
+      }
+
+      img {
+        height: 10rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .at-a-glance {
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

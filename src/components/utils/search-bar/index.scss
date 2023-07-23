@@ -1,0 +1,209 @@
+@import "../../../styles/variables.scss";
+
+.weather-search-input-wrapper {
+  margin-top: 0.625rem;
+  position: relative;
+
+  .weather-search-input {
+    padding: 0.5rem 2.225rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    outline: transparent;
+    border-radius: 3.3125rem;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.231);
+    border: 1.5px solid rgb(145 145 145 / 32%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+    transition: all 0.5s;
+
+    // prevents browser autofill styles
+    &:-webkit-autofill {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+    &:autofill {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+
+    &.with-result {
+      transition: all 0.5s;
+      border-radius: 0.625rem 0.625rem 0 0 !important;
+      border-bottom: 0;
+    }
+
+    &:focus {
+      border-radius: 0.625rem;
+      backdrop-filter: blur(1.4px);
+      -webkit-backdrop-filter: blur(1.4px);
+    }
+
+    @media (min-width: $sm-breakpoint) {
+      padding: 0.5rem 2.9375rem;
+      font-size: 1.5rem;
+    }
+
+    &::placeholder {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.3);
+
+      @media (min-width: $sm-breakpoint) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &::-moz-placeholder {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.3);
+
+      @media (min-width: $sm-breakpoint) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .search-results {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 2.225rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.231);
+    border: 1px solid rgb(145 145 145 / 32%);
+    border-radius: 0 0 0.625rem 0.625rem;
+    border-top: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+    margin-top: 0.045rem;
+    transition: all 0.1s;
+    animation: down 0.1s ease-out forwards;
+
+    > :not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      border: 1.5px solid rgb(145 145 145 / 32%);
+    }
+
+    @keyframes down {
+      from {
+        transform: translateX(-10px);
+      }
+      to {
+        transform: translateX(0px);
+      }
+    }
+
+    @media (min-width: $sm-breakpoint) {
+      padding: 0.75rem 2.9375rem;
+    }
+
+    .country-time-wrapper {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-size: 0.75rem;
+      max-width: 75%;
+
+      @media (min-width: $md-breakpoint) {
+        font-size: 0.875rem;
+      }
+
+      .country {
+        font-weight: 700;
+        font-size: 0.875rem;
+        white-space: break-spaces;
+
+        @media (min-width: $md-breakpoint) {
+          font-size: 1rem;
+        }
+      }
+
+      > :first-child {
+        margin-bottom: 0.25rem;
+      }
+
+      .day-location-wrapper {
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+        flex-wrap: wrap;
+
+        @media (min-width: $md-breakpoint) {
+          font-size: 1rem;
+        }
+
+        .day {
+          display: none;
+
+          @media (min-width: $sm-breakpoint) {
+            display: inline;
+          }
+        }
+
+        .dash {
+          display: none;
+          margin-right: 0.25rem;
+
+          @media (min-width: $sm-breakpoint) {
+            display: inline;
+          }
+        }
+      }
+
+      .time {
+        font-size: 0.875rem;
+
+        @media (min-width: $md-breakpoint) {
+          font-size: 1rem;
+        }
+      }
+      // display: flex;
+    }
+
+    .temp-condition-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      .temperature {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+
+        @media (min-width: $md-breakpoint) {
+          font-size: 1.75rem;
+        }
+      }
+
+      .condition {
+        font-size: 0.75rem;
+
+        @media (min-width: $md-breakpoint) {
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .day-location-wrapper {
+      display: flex;
+      align-items: flex-end;
+      font-size: 0.75rem;
+
+      .location {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .day {
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../../styles/variables.scss";
+
+button.input-element {
+  padding: 0.625rem 0.625rem;
+  background-color: $color-blue-10;
+  border: 1px solid rgba(15, 14, 49, 0.1);
+  color: $color-white;
+  border-radius: 0.625rem;
+  font-size: 1.075rem;
+  margin-bottom: 0.25rem;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 100ms;
+
+  &:hover {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    box-shadow: unset;
+  }
+
+  @media (min-width: $sm-breakpoint) {
+    padding: 0.9375rem 0.625rem;
+  }
+}

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Exo 2";
+  src: url("../assets/fonts/Exo2-Regular.ttf");
+}
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/Karla-Regular.ttf");
+}
+@font-face {
+  font-family: "Mogra";
+  src: url("../assets/fonts/Mogra-Regular.ttf");
+}
+
+// colors
+$color-gray: #dedfdf;
+$color-gray-1: rgba(255, 255, 255, 0.05);
+$color-blue: #0760d7;
+$color-blue-1: #4646b1;
+$color-blue-2: #4400be40;
+$color-blue-10: #1b86e6;
+$color-blue-100: #170048e0;
+$color-yellow: #eeab53db;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// breakpoints
+$xl-breakpoint: 1340px;
+$lg-breakpoint: 1200px;
+$md-breakpoint: 1024px;
+$sm-breakpoint: 768px;
+$xs-breakpoint: 475px;
+
+// fonts
+$font_weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+@function weight($weight-name) {
+  @return map-get($font_weights, $weight-name);
+}
+
+$font-family-text: "Karla";
+$font-family-digit: "Exo 2";
+$font-family-heading: "Mogra";

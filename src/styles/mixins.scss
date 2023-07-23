@@ -1,0 +1,12 @@
+@mixin temperatureText() {
+  color: $color-white;
+  font-family: $font-family-digit;
+  font-weight: weight(bold);
+  font-size: 1.8rem;
+}
+
+@mixin flexContainer() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

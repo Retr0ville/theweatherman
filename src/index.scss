@@ -1,0 +1,15 @@
+@import '~styles/variables.scss';
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-family-text, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
