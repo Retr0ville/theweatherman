@@ -1,5 +1,6 @@
 
 ![Logo](https://i.ibb.co/RcH0xH6/weatherapp.png)
+
 view on the web: https://elite-weather.netlify.app
 
 ## TheWeatherMan (TWM)
